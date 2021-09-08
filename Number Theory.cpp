@@ -32,7 +32,7 @@ Combinatorics/nCr
 
 const int N =1e5+5 ;
 int fac[N] ;
-void Factorial() {
+void PreFactorial() {
     fac[0]=1 ;
     for(int i=1; i<N; i++)
         fac[i]=1ll*i*fac[i-1] %mod ;
