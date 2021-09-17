@@ -22,7 +22,7 @@ int eGCD(int a, int b, int& x0, int& y0) { // a*x + b*y = r0
 Fast Power
 
 int fp(int b, int p) {
-    if(p==0) return 1;
+    if(p==1) return b;
     int ans = fp(1ll*b*b %mod,p/2) %mod ;
     if(p%2) return 1ll*ans*b %mod;
     return ans%mod ;
