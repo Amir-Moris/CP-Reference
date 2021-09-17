@@ -28,6 +28,12 @@ int fp(int b, int p) {
     return ans%mod ;
 }
 // ***************************************************************************************** //
+Modular Inverse
+ 
+int modinv(int b, int mod) { // mod must be prime
+    return fp(b,mod-2) ;
+}
+// ***************************************************************************************** //
 Combinatorics/nCr
 
 const int N =1e5+5 ;
