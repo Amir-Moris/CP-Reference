@@ -5,7 +5,7 @@ void move1step(int& a, int& b, int q) {
     a = b;
     b = next;
 }
-int eGCD(int a, int b, int& x0, int& y0) { // a*x + b*y = r0
+int eGCD(int a, int b, int& x0, int& y0) { // a*x + b*y = g
     int r0 = a, r1 = b;
     int x1, y1;
     x1 = y0 = 0;
