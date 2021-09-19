@@ -43,7 +43,7 @@ void PreFactorial() {
     for(int i=1; i<N; i++)
         fac[i]=1LL*i*fac[i-1] %mod ;
 }
-long long comb(int n, int r) { // fp is Fast Power
+int comb(int n, int r) { // fp is Fast Power
     return 1LL*fac[n] * fp(1LL*fac[r]*fac[n-r]%mod,mod-2) %mod ;
 }
 // ***************************************************************************************** //
