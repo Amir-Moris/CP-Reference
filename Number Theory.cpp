@@ -23,8 +23,8 @@ Fast Power
 
 int fp(int b, int p) {
     if(p==1) return b;
-    int ans = fp(1ll*b*b %mod,p/2) %mod ;
-    if(p%2) return 1ll*ans*b %mod;
+    int ans = fp(1LL*b*b %mod,p/2) %mod ;
+    if(p%2) return 1LL*ans*b %mod;
     return ans%mod ;
 }
 // ***************************************************************************************** //
@@ -41,10 +41,10 @@ int fac[N] ;
 void PreFactorial() {
     fac[0]=1 ;
     for(int i=1; i<N; i++)
-        fac[i]=1ll*i*fac[i-1] %mod ;
+        fac[i]=1LL*i*fac[i-1] %mod ;
 }
 long long comb(int n, int r) { // fp is Fast Power
-    return 1ll*fac[n] * fp(1ll*fac[r]*fac[n-r]%mod,mod-2) %mod ;
+    return 1LL*fac[n] * fp(1LL*fac[r]*fac[n-r]%mod,mod-2) %mod ;
 }
 // ***************************************************************************************** //
 
