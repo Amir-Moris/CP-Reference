@@ -2,6 +2,7 @@ ordered_set (dont`t forget to change data-type)
 // dont`t forget to change data-type !!
 // find_by_order(k) [iterator] {random access}
 // order_of_key(k) [int] {number of items < k}
+// ordered_multiset reverse upper_bound & lower_bound !!
   
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
