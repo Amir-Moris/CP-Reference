@@ -6,7 +6,7 @@ ordered_set (dont`t forget to change data-type)
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 using namespace __gnu_pbds;
-#define ordered_set tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>
-#define ordered_multiset tree<int, null_type, less_equal<int>, rb_tree_tag, tree_order_statistics_node_update>
+template<typename Type> using ordered_set = tree<Type, null_type, less<Type>, rb_tree_tag, tree_order_statistics_node_update> ;
+template<typename Type> using ordered_multiset = tree<Type, null_type, less_equal<Type>, rb_tree_tag, tree_order_statistics_node_update> ;
 
 // ************************************************************************************************************** //
