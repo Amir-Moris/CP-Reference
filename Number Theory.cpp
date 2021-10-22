@@ -21,7 +21,7 @@ int eGCD(int a, int b, int& x0, int& y0) { // a*x + b*y = g
 // ***************************************************************************************** //
 Fast Power
 
-int fp(int b, int p) {
+int fp(int b,int p) {
     if(p==0) return 1;
     int ans = fp(1LL*b*b %mod,p/2) %mod ;
     if(p%2) return 1LL*ans*b %mod;
@@ -30,7 +30,7 @@ int fp(int b, int p) {
 // ***************************************************************************************** //
 Modular Inverse
  
-int modinv(int b, int mod) { // mod must be prime
+int modinv(int b,int mod) { // mod must be prime
     return fp(b,mod-2) ;
 }
 // ***************************************************************************************** //
@@ -43,7 +43,8 @@ void PreFactorial() {
     for(int i=1; i<N; i++)
         fac[i]=1LL*i*fac[i-1] %mod ;
 }
-int comb(int n, int r) {
+int comb(int n,int r) {
+    if(n<r) return 0;
     return 1LL*fac[n] * fp(1LL*fac[r]*fac[n-r]%mod,mod-2) %mod ;
 }
 // ***************************************************************************************** //
