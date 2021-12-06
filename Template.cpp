@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#pragma GCC optimize ("O3")
 #define IO ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define fre freopen("input.txt","r",stdin) , freopen("output.txt","w",stdout) ;
 #define ll long long
