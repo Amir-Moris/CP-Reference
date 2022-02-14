@@ -1,6 +1,6 @@
 ordered_set 
 // dont`t forget to change data-type !!
-// find_by_order(k) [iterator] {random access}
+// find_by_order(k) [iterator] {iterator on the Kth element}
 // order_of_key(k) [int] {number of items < k}
 // ordered_multiset reverse upper_bound & lower_bound !!
   
