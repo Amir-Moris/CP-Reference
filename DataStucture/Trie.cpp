@@ -7,7 +7,7 @@ struct Trie {
     Trie *ptr[27] ;
 
     Trie() {
-        for(int i=0; i<27; i++) {
+        for(int i=0; i<26; i++) {
             ptr[i] = NULL ;
         }
     }
@@ -37,5 +37,6 @@ int Search(string &s) {
     return tmp->cnt;
 }
 int main() {
-
+    root = new Trie() ;
+    
 }
