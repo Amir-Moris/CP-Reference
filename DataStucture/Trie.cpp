@@ -13,7 +13,7 @@ struct Trie {
     }
 } *root;
 
-void insert(string &s) {
+void Insert(string &s) {
     Trie *tmp = root ;
     for(auto &i : s) {
         int cur = i - 'a' ;
