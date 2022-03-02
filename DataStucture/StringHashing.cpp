@@ -10,10 +10,10 @@ int mul(int a, int b) {
     a = ((a%mod) + mod) %mod, b = ((b%mod) + mod) %mod ;
     return (a * 1LL * b) %mod ;
 }
-int fp(int b, int p) {
-    if(!p) return 1;
-    ll ans = fp(mul(b,b), p/2) ;
-    if(p%2) return mul(ans,b) ;
+int fp(int b,int p) {
+    if(p==0) return 1;
+    int ans = fp(1LL*b*b %mod,p/2) %mod ;
+    if(p%2) return 1LL*ans*b %mod;
     return ans%mod ;
 }
 int modinv(int b,int mod) {
