@@ -14,27 +14,27 @@ struct Trie {
 } *root;
 
 void Insert(string &s) {
-    Trie *tmp = root ;
+    Trie *cur = root ;
     for(auto &i : s) {
-        int cur = i - 'a' ;
-        if(tmp->ptr[cur] == NULL)
-            tmp->ptr[cur] = new Trie();
+        int ch = i - 'a' ;
+        if(cur->ptr[ch] == NULL)
+            cur->ptr[ch] = new Trie();
 
-        tmp = tmp->ptr[cur] ;
-        tmp->cnt++ ;
+        cur = cur->ptr[ch] ;
+        cur->cnt++ ;
     }
 }
 
 int Search(string &s) {
-    Trie *tmp = root ;
+    Trie *cur = root ;
     for(auto &i : s) {
-        int cur = i - 'a' ;
-        if(tmp->ptr[cur] == NULL)
+        int ch = i - 'a' ;
+        if(cur->ptr[ch] == NULL)
             return 0;
 
-        tmp = tmp->ptr[cur] ;
+        cur = cur->ptr[ch] ;
     }
-    return tmp->cnt;
+    return cur->cnt;
 }
 int main() {
     root = new Trie() ;
