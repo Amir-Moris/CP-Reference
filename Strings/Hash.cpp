@@ -38,7 +38,7 @@ struct Hash {
     Hash(string &s) {
         prefixHash = vector<pair<int, int>> (s.size()); // double Hashing
         for(int i=0; i<s.size(); i++) {
-            int cur = i - 'a' ;
+            int cur = s[i] - 'a' ;
 
             int f = mul(cur + 1, power1[i]) ;
             int s = mul(cur + 1, power2[i]) ;
