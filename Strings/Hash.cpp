@@ -40,11 +40,11 @@ struct Hash {
         for(int i=0; i<s.size(); i++) {
             int cur = s[i] - 'a' ;
 
-            int f = mul(cur + 1, power1[i]) ;
-            int s = mul(cur + 1, power2[i]) ;
-            f = add(f, prefixHash[max(0,i - 1)].first) ;
-            s = add(s, prefixHash[max(0,i - 1)].second) ;
-            prefixHash[i] = {f,s} ;
+            int First = mul(cur + 1, power1[i]) ;
+            int Second = mul(cur + 1, power2[i]) ;
+            First = add(First, prefixHash[max(0,i - 1)].first) ;
+            Second = add(Second, prefixHash[max(0,i - 1)].second) ;
+            prefixHash[i] = make_pair(First,Second) ;
         }
     }
   
@@ -53,11 +53,11 @@ struct Hash {
     }
   
     pair<int,int> getHashRange(int l, int r) {
-        int f = add(prefixHash[r].first, -(l ? prefixHash[l - 1].first : 0)) ;
-        int s = add(prefixHash[r].second, -(l ? prefixHash[l - 1].second : 0)) ;
-        f = mul(f,inv1[l]), s = mul(s,inv1[l]) ;
+        int First = add(prefixHash[r].first, -(l ? prefixHash[l - 1].first : 0)) ;
+        int Second = add(prefixHash[r].second, -(l ? prefixHash[l - 1].second : 0)) ;
+        First = mul(First,inv1[l]), Second = mul(Second,inv1[l]) ;
 
-        return make_pair(f,s) ;
+        return make_pair(First,Second) ;
     }
 };
 int main() {
