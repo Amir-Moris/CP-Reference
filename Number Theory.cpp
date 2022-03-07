@@ -1,7 +1,7 @@
-Extended Euclidean Algorithm (e-GCD)
+// ** Extended Euclidean Algorithm (e-GCD) ** //
 
 void move1step(int& a, int& b, int q) {
-    int next = a-q*b ;
+    int next = a - q * b ;
     a = b;
     b = next;
 }
@@ -16,10 +16,10 @@ int eGCD(int a, int b, int& x0, int& y0) { // a*x + b*y = g
         move1step(y0, y1, q) ;
         move1step(r0, r1, q) ;
     }
-    return r0 ;
+    return r0;
 }
 // ***************************************************************************************** //
-Fast Power
+// ** Fast Power ** //
 
 int fp(int b, int p) {
     if(!p) return 1;
@@ -28,24 +28,24 @@ int fp(int b, int p) {
     return ans%mod;
 }
 // ***************************************************************************************** //
-Modular Inverse
- 
-int modinv(int b,int mod) { // mod must be prime
-    return fp(b,mod-2) ;
+// ** Modular Inverse ** //
+
+int modinv(int b, int mod) { // mod must be prime
+    return fp(b, mod - 2) ;
 }
 // ***************************************************************************************** //
-Combinatorics/nCr
+// ** Combinatorics/nCr ** //
 
 const int N =1e5+5 ;
 int fac[N] ;
 void PreFactorial() {
-    fac[0]=1 ;
+    fac[0] = 1;
     for(int i=1; i<N; i++)
-        fac[i]=1LL*i*fac[i-1] %mod ;
+        fac[i] = i * 1LL * fac[i-1] %mod ;
 }
 int comb(int n,int r) {
     if(n<r) return 0;
-    return 1LL*fac[n] * fp(1LL*fac[r]*fac[n-r]%mod,mod-2) %mod ;
+    return fac[n] * 1LL * fp(fac[r] * 1LL * fac[n-r] %mod, mod-2) %mod ;
 }
 // ***************************************************************************************** //
 
