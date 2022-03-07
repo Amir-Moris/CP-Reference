@@ -47,11 +47,11 @@ struct Hash {
             prefixHash[i] = make_pair(First,Second) ;
         }
     }
-  
+
     pair<int,int> getHashVal() {
         return prefixHash.back() ;
     }
-  
+
     pair<int,int> getHashRange(int l, int r) {
         int First = add(prefixHash[r].first, -(l ? prefixHash[l - 1].first : 0)) ;
         int Second = add(prefixHash[r].second, -(l ? prefixHash[l - 1].second : 0)) ;
@@ -61,7 +61,6 @@ struct Hash {
     }
 };
 int main() {
-    
-    prePow() ;
+    prePow();
 
 }
