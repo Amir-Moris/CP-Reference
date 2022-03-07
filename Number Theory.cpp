@@ -21,11 +21,11 @@ int eGCD(int a, int b, int& x0, int& y0) { // a*x + b*y = g
 // ***************************************************************************************** //
 Fast Power
 
-int fp(int b,int p) {
-    if(p==0) return 1;
-    int ans = fp(1LL*b*b %mod,p/2) %mod ;
-    if(p%2) return 1LL*ans*b %mod;
-    return ans%mod ;
+int fp(int b, int p) {
+    if(!p) return 1;
+    int ans = fp(b * 1LL * b %mod, p/2) %mod ;
+    if(p%2) return ans * 1LL * b %mod;
+    return ans%mod;
 }
 // ***************************************************************************************** //
 Modular Inverse
