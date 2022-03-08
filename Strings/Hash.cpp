@@ -37,12 +37,12 @@ struct Hash {
     Hash(string &s) {
         prefixHash = vector<pair<int, int>> (s.size()); // double Hashing
         for(int i=0; i<s.size(); i++) {
-            int cur = s[i] - 'a' ;
+            int cur = s[i] - 'a' + 1;
 
-            int First = mul(cur + 1, power1[i]) ;
-            int Second = mul(cur + 1, power2[i]) ;
-            First = add(First, prefixHash[max(0,i - 1)].first) ;
-            Second = add(Second, prefixHash[max(0,i - 1)].second) ;
+            int First = mul(cur, power1[i]) ;
+            int Second = mul(cur, power2[i]) ;
+            First = add(First, prefixHash[max(0, i - 1)].first) ;
+            Second = add(Second, prefixHash[max(0, i - 1)].second) ;
             prefixHash[i] = make_pair(First,Second) ;
         }
     }
