@@ -4,7 +4,7 @@
 #define fre freopen("input.txt","r",stdin) , freopen("output.txt","w",stdout) ;
 #define ll long long
 using namespace std;
-const int N=1e5+5, mod=1e9+7 ;
+const int N=1e5+5, Mod=1e9+7 ;
 
 int main() {
     IO
