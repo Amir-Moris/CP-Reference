@@ -23,9 +23,9 @@ int eGCD(int a, int b, int& x0, int& y0) { // a*x + b*y = g
 
 int fp(int b, int p) {
     if(!p) return 1;
-    int ans = fp(b * 1LL * b %mod, p/2) %mod ;
-    if(p%2) return ans * 1LL * b %mod;
-    return ans%mod;
+    int ans = fp(b * 1LL * b %Mod, p/2) %Mod ;
+    if(p%2) return ans * 1LL * b %Mod;
+    return ans%Mod;
 }
 // ***************************************************************************************** //
 // ** Modular Inverse ** //
@@ -41,11 +41,11 @@ int fac[N] ;
 void PreFactorial() {
     fac[0] = 1;
     for(int i=1; i<N; i++)
-        fac[i] = i * 1LL * fac[i-1] %mod ;
+        fac[i] = i * 1LL * fac[i-1] %Mod ;
 }
 int comb(int n,int r) {
     if(n<r) return 0;
-    return fac[n] * 1LL * fp(fac[r] * 1LL * fac[n-r] %mod, mod-2) %mod ;
+    return fac[n] * 1LL * fp(fac[r] * 1LL * fac[n-r] %Mod, Mod-2) %Mod ;
 }
 // ***************************************************************************************** //
 
