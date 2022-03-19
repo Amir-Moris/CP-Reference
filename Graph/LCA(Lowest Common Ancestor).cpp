@@ -2,7 +2,7 @@ const int N=1e5+5 ;
 int LOG, timer, tin[N], tout[N] ;
 vector<vector<int>> adj, up ;
 
-void dfs(int node, int parent) {
+void DFS(int node, int parent) {
     tin[node] = timer++ ;
     up[node][0] = parent ;
 
@@ -13,7 +13,7 @@ void dfs(int node, int parent) {
 
     for(auto child : adj[node]) {
         if(child != parent) {
-            dfs(child,node) ;
+            DFS(child,node) ;
         }
     }
     tout[node] = timer++ ;
