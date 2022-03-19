@@ -7,9 +7,8 @@ struct query {
     int l, r, idx, id;
 
     query() {}
-    query(int ql,int qr,int qidx) {
-        l = ql, r = qr ;
-        idx = qidx, id = ql/SQRT ;
+    query(int ql,int qr,int qidx): l(ql), r(qr), idx(qidx) {
+        id = ql/SQRT ;
     }
 
     bool operator <(const query &q) {
