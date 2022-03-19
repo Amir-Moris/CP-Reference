@@ -6,7 +6,7 @@ void DFS(int node, int parent) {
     tin[node] = timer++ ;
     up[node][0] = parent ;
 
-    for(int bit=1; bit<LOG; bit++) {
+    for(int bit = 1; bit < LOG; bit++) {
         int prev = up[node][bit - 1] ;
         up[node][bit] = up[prev][bit - 1] ;
     }
@@ -27,7 +27,7 @@ int LCA(int x, int y) {
     if(isAncestor(x,y)) return x;
     if(isAncestor(y,x)) return y;
 
-    for(int k=LOG-1; k>=0; k--) {
+    for(int k = LOG - 1; k >= 0; k--) {
         if(!isAncestor(up[x][k],y)) {
             x = up[x][k] ;
         }
