@@ -1,34 +1,34 @@
 #include <bits/stdc++.h>
 #define ll long long
 using namespace std;
-const int N=1e5+5, P1=31, P2=37, mod=1e9+7 ;
+const int N=1e5+5, P1=31, P2=37, MOD=1e9+7 ;
 int add(int a, int b) {
-    a = ((a % mod) + mod) % mod, b = ((b % mod) + mod) % mod ;
-    return (a + b) %mod ;
+    a = ((a % MOD) + MOD) % MOD, b = ((b % MOD) + MOD) % MOD ;
+    return (a + b) %MOD ;
 }
 int mul(int a, int b) {
-    a = ((a % mod) + mod) % mod, b = ((b % mod) + mod) % mod ;
-    return (a * 1LL * b) %mod ;
+    a = ((a % MOD) + MOD) % MOD, b = ((b % MOD) + MOD) % MOD ;
+    return (a * 1LL * b) %MOD ;
 }
 int fp(int b, int p) {
     if(!p) return 1;
-    int ans = fp(b * 1LL * b %mod, p/2) %mod ;
-    if(p%2) return ans * 1LL * b %mod;
-    return ans%mod;
+    int ans = fp(b * 1LL * b %MOD, p/2) %MOD ;
+    if(p%2) return ans * 1LL * b %MOD;
+    return ans%MOD;
 }
-int modinv(int b, int mod) {
-    return fp(b, mod - 2) ;
+int MODinv(int b, int MOD) {
+    return fp(b, MOD - 2) ;
 }
 int power1[N], inv1[N], power2[N], inv2[N] ;
 void PrePower() {
     power1[0] = inv1[0] = power2[0] = inv2[0] = 1;
-    int ModInverse1 = modinv(P1, mod);
-    int ModInverse2 = modinv(P2, mod);
+    int MODInverse1 = MODinv(P1, MOD);
+    int MODInverse2 = MODinv(P2, MOD);
     for(int i=1; i<N; i++) {
         power1[i] = mul(P1, power1[i - 1]) ;
         power2[i] = mul(P2, power2[i - 1]) ;
-        inv1[i] = mul(ModInverse1, inv1[i - 1]) ;
-        inv2[i] = mul(ModInverse2, inv2[i - 1]) ;
+        inv1[i] = mul(MODInverse1, inv1[i - 1]) ;
+        inv2[i] = mul(MODInverse2, inv2[i - 1]) ;
     }
 }
 struct Hash {
