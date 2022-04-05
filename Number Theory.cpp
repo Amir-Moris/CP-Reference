@@ -41,11 +41,11 @@ int fac[N] ;
 void PreFactorial() {
     fac[0] = 1;
     for(int i=1; i<N; i++)
-        fac[i] = i * 1LL * fac[i-1] %MOD ;
+        fac[i] = i * 1LL * fac[i - 1] %MOD ;
 }
-int comb(int n,int r) {
-    if(n<r) return 0;
-    return fac[n] * 1LL * fp(fac[r] * 1LL * fac[n-r] %MOD, MOD-2) %MOD ;
+int comb(int n, int r) {
+    if(n < r) return 0;
+    return fac[n] * 1LL * fp(fac[r] * 1LL * fac[n - r] %MOD, MOD - 2) %MOD ;
 }
 // ***************************************************************************************** //
 
