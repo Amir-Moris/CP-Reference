@@ -1,4 +1,4 @@
-const int N=1e5+5 ;
+const int N = 1e5+5 ;
 int LOG, depth[N] ;
 vector<vector<int>> adj, up ;
 
