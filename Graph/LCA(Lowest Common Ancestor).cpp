@@ -1,4 +1,4 @@
-const int N=1e5+5 ;
+const int N = 1e5+5 ;
 int LOG, timer, tin[N], tout[N] ;
 vector<vector<int>> adj, up ;
 
