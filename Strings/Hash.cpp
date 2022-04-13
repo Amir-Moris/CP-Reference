@@ -1,7 +1,4 @@
-#include <bits/stdc++.h>
-#define ll long long
-using namespace std;
-const int N=1e5+5, P1=31, P2=37, MOD=1e9+7 ;
+const int N = 1e5+5, P1 = 31, P2 = 37, MOD = 1e9+7 ;
 int add(int a, int b) {
     a = ((a % MOD) + MOD) % MOD, b = ((b % MOD) + MOD) % MOD ;
     return (a + b) %MOD ;
