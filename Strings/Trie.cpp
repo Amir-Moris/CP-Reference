@@ -1,7 +1,3 @@
-#include <bits/stdc++.h>
-#define ll long long
-using namespace std;
-
 struct Trie {
     int cnt = 0;
     Trie *ptr[27] ;
