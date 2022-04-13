@@ -1,4 +1,5 @@
-const double EPS=1e-9 ;
+const double EPS = 1e-9 ;
+const long double PI = acos(-1);
 
 template<class T>
 struct point {
