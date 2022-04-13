@@ -36,7 +36,7 @@ int modinv(int b, int Mod) { // mod must be prime
 // ***************************************************************************************** //
 // ** Combinatorics/nCr ** //
 
-const int N=1e5+5, MOD=1e9+7 ;
+const int N = 1e5+5, MOD = 1e9+7 ;
 int fac[N] ;
 void PreFactorial() {
     fac[0] = 1;
