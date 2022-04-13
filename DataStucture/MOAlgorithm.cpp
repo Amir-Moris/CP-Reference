@@ -1,18 +1,12 @@
-#include <bits/stdc++.h>
-#define ll long long
-using namespace std;
-
-const int N=1e5+5, SQRT=320 ;
+const int N = 1e5+5, SQRT = 320 ;
 struct query {
-    int l, r, idx, id;
-
+    int l, r, idx, BlockID;
     query() {}
-    query(int ql,int qr,int qidx): l(ql), r(qr), idx(qidx) {
-        id = ql/SQRT ;
+    query(int ql, int qr, int qidx): l(ql), r(qr), idx(qidx) {
+        BlockID = ql/SQRT ;
     }
-
     bool operator <(const query &q) {
-        if(id != q.id) return id < q.id;
+        if(BlockID != q.BlockID) return BlockID < q.BlockID;
         return r < q.r;
     }
 } qu[N];
@@ -25,7 +19,7 @@ void Remove(int i) {
     
 }
 void solvequeries(int q) {
-    sort(qu,qu+q) ;
+    sort(qu, qu+q) ;
 
     int curL = 1, curR = 0 ;
     for(int j=0; j<q; j++) {
@@ -41,7 +35,4 @@ void solvequeries(int q) {
 
         ans[I] = result ;
     }
-}
-int main() {
-    
 }
