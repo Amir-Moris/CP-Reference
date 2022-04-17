@@ -1,3 +1,9 @@
+// count number of ones in the binary representation of num
+int Ones = __builtin_popcountll(num)
+
+
+    
+// ********************************************************************** //    
 // To compute xor value from 0 to n
 int compXOR(int n) {
     if (n % 4 == 0) return n;
@@ -9,5 +15,5 @@ int compXOR(int n) {
 bool mnwr(int mask, int bit) {
     return ((mask >> bit) & 1);
 }
-// count number of ones in the binary representation of x
-__builtin_popcountll(x)
+
+
