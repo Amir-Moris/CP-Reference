@@ -9,3 +9,5 @@ int compXOR(int n) {
 bool mnwr(int mask, int bit) {
     return ((mask >> bit) & 1);
 }
+// count number of ones in the binary representation of x
+__builtin_popcountll(x)
