@@ -5,15 +5,18 @@ struct DSU {
         parent = Rank = vector<int> (sz + 5);
         forests = 0;
     }
+    
     void make_set(int a) {
         parent[a] = a;
         Rank[a] = 1;
         forests++;
     }
+    
     int find_set(int a) {
         if(parent[a] == a) return a;
         return parent[a] = find_set(parent[a]);
     }
+    
     bool connect(int a, int b) {
         a = find_set(a), b = find_set(b);
         if(a != b) {
