@@ -22,7 +22,7 @@ struct DSU {
         if(a != b) {
             if(Rank[a] > Rank[b]) swap(a, b);
             parent[a] = b;
-            if(Rank[a] == Rank[b]) Rank[b]++;
+            Rank[b] += (Rank[a] == Rank[b]);
             forests--;
         }
         return a != b;
