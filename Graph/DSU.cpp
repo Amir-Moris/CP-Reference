@@ -17,14 +17,13 @@ struct DSU {
         return parent[a] = find_set(parent[a]);
     }
     
-    bool connect(int a, int b) {
-        a = find_set(a), b = find_set(b);
-        if(a != b) {
-            if(Rank[a] > Rank[b]) swap(a, b);
-            parent[a] = b;
-            Rank[b] += (Rank[a] == Rank[b]);
-            forests--;
-        }
-        return a != b;
+    void connect(int a, int b) {
+    a = find_set(a), b = find_set(b);
+        
+    if(Rank[a] > Rank[b]) swap(a, b);
+    parent[a] = b;
+    Rank[b] += (Rank[a] == Rank[b]);
+    forests--;
     }
+    
 };
