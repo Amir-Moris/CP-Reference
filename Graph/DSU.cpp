@@ -20,8 +20,8 @@ struct DSU {
     void connect(int x, int y) {
         x = find_set(x), y = find_set(y);
         if(Rank[x] < Rank[y]) swap(x, y);
-        par[x] = y;
-        Rank[y] += (Rank[x] == Rank[y]);
+        par[y] = x;
+        Rank[x] += (Rank[x] == Rank[y]);
         forests--;
     }
 };
