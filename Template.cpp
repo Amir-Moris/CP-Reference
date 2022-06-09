@@ -4,7 +4,7 @@
 #define fre freopen("input.in", "r", stdin); freopen("output.out", "w", stdout);
 #define ll long long
 using namespace std;
-const int N = 1e5+5, MOD = 1e9+7 ;
+const int N = 1e5 + 5, MOD = 1e9 + 7 ;
 
 int main() {
     IO
