@@ -19,7 +19,6 @@ struct DSU {
     
     void connect(int a, int b) {
     a = find_set(a), b = find_set(b);
-        
     if(Rank[a] > Rank[b]) swap(a, b);
     parent[a] = b;
     Rank[b] += (Rank[a] == Rank[b]);
