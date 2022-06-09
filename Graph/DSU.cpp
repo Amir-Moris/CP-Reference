@@ -1,28 +1,27 @@
 struct DSU {
-    vector<int> parent, Rank;
+    vector<int> par, Rank;
     int forests = 0;
     DSU(int sz) {
-        parent = Rank = vector<int> (sz + 5);
+        par = Rank = vector<int> (sz + 5);
         forests = 0;
     }
-    
-    void make_set(int a) {
-        parent[a] = a;
-        Rank[a] = 1;
+
+    void make_set(int& x) {
+        par[x] = x;
+        Rank[x] = 1;
         forests++;
     }
     
-    int find_set(int a) {
-        if(parent[a] == a) return a;
-        return parent[a] = find_set(parent[a]);
+    int find_set(int x) {
+        if(par[x] == x) return x;
+        return par[x] = find_set(par[x]);
     }
     
-    void connect(int a, int b) {
-    a = find_set(a), b = find_set(b);
-    if(Rank[a] > Rank[b]) swap(a, b);
-    parent[a] = b;
-    Rank[b] += (Rank[a] == Rank[b]);
-    forests--;
+    void connect(int x, int y) {
+        x = find_set(x), y = find_set(y);
+        if(Rank[x] < Rank[y]) swap(x, y);
+        par[x] = y;
+        Rank[y] += (Rank[x] == Rank[y]);
+        forests--;
     }
-    
 };
