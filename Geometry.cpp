@@ -1,8 +1,7 @@
 const double EPS = 1e-9 ;
 const long double PI = acos(-1);
 
-template<class T>
-struct point {
+template<class T> struct point {
     T x, y;
     point() {}
     point(T x, T y): x(x), y(y) {}
