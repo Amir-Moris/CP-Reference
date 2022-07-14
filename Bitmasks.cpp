@@ -1,5 +1,5 @@
 // count number of ones in the binary representation of num
-int Ones = __builtin_popcountll(num)
+int onesCount = __builtin_popcountll(num);
 
 
     
