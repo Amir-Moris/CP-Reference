@@ -19,6 +19,6 @@ long double PolygonArea(vector<point<int>> &p) {
     for(int i = 1; i < (int)p.size(); i++) {
         area += p[i].CrossProduct(p[i - 1]);
     }
-    return fabs(area / 2.00);
+    return fabs(area / 2.0);
 }
 
