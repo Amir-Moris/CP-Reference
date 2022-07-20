@@ -45,8 +45,9 @@ int modinverse(int b, int Mod) { // mod must be prime
 int fac[N] ;
 void PreFactorial() {
     fac[0] = 1;
-    for(int i=1; i<N; i++)
+    for(int i=1; i<N; i++) {
         fac[i] = (i * 1LL * fac[i - 1]) % MOD;
+    }
 }
 
 int nCr(int n, int r) {
