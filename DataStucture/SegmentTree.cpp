@@ -6,31 +6,31 @@ template<class T> struct segtree {
         while(sz < n) sz *= 2;
         sums = vector<T> (2 * sz, 0);
     }
-    
-    void update(int i, int v, int idx, int lx, int rx) {
-        if(rx - lx == 1) {
-            sums[idx] = v;
+
+    void update(int pos, int val, int cur, int l, int r) {
+        if(r - l == 1) {
+            sums[cur] = val;
             return;
         }
-        int mid = (lx + rx) / 2;
-        if(i < m) {
-            update(i, v, 2 * idx + 1, lx, mid);
+        int mid = (l + r) / 2;
+        if(pos < mid) {
+            update(pos, val, 2 * cur + 1, l, mid);
         } else {
-            update(i, v, 2 * idx + 2, mid, rx);
+            update(pos, val, 2 * cur + 2, mid, r);
         }
-        sums[idx] = sums[2 * idx + 1] + sums[2 * idx + 2];
+        sums[cur] = sums[2 * cur + 1] + sums[2 * cur + 2];
     }
-    void update(int i, int v) {
-        update(i, v, 0, 0, sz);
+    void update(int pos, int val) {
+        update(pos, val, 0, 0, sz);
     }
 
-    T sum(int l, int r, int idx, int lx, int rx) {
-        if(lx >= r || rx <= l) return 0;
-        if(lx >= l && rx <= r) return sums[idx];
-        int mid = (lx + rx) / 2;
-        return sum(l, r, 2 * idx + 1, lx, mid) + sum(l, r, 2 * idx + 2, mid, rx);
+    T getSum(int lx, int rx, int cur, int l, int r) {
+        if(l >= rx || r <= lx) return 0;
+        if(l >= lx && r <= rx) return sums[cur];
+        int mid = (l + r) / 2;
+        return getSum(lx, rx, 2 * cur + 1, l, mid) + getSum(lx, rx, 2 * cur + 2, mid, r);
     }
-    T sum(int l, int r) {
-        return sum(l, r, 0, 0, sz);
+    T getSum(int l, int r) {
+        return getSum(l, r, 0, 0, sz);
     }
 };
