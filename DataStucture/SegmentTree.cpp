@@ -7,21 +7,21 @@ template<class T> struct segtree {
         sums = vector<T> (2 * sz, 0);
     }
     
-    void setValue(int i, int v, int idx, int lx, int rx) {
+    void update(int i, int v, int idx, int lx, int rx) {
         if(rx - lx == 1) {
             sums[idx] = v;
             return;
         }
         int mid = (lx + rx) / 2;
         if(i < m) {
-            setValue(i, v, 2 * idx + 1, mid, rx);
+            update(i, v, 2 * idx + 1, lx, mid);
         } else {
-            setValue(i, v, 2 * idx + 2, lx, mid);
+            update(i, v, 2 * idx + 2, mid, rx);
         }
         sums[idx] = sums[2 * idx + 1] + sums[2 * idx + 2];
     }
-    void setValue(int i, int v) {
-        setValue(i, v, 0, 0, sz);
+    void update(int i, int v) {
+        update(i, v, 0, 0, sz);
     }
 
     T sum(int l, int r, int idx, int lx, int rx) {
