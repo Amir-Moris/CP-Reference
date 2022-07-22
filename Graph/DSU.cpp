@@ -5,7 +5,6 @@ struct DSU {
         par = Rank = vector<int> (sz + 5);
         forests = 0;
     }
-
     void make_set(int& x) {
         par[x] = x;
         Rank[x] = 1;
