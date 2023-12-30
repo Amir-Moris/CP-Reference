@@ -49,7 +49,7 @@ struct Hash {
         return make_pair(First, Second);
     }
 
-    pair<int, int> concat(pair<int, int> S1, pair<int, int> S2, int S2_size) {// S1 + S2
+    static pair<int, int> concat(pair<int, int> S1, pair<int, int> S2, int S2_size) {// S1 + S2
         S1.first = add(mul(S1.first, power1[S2_size]), S2.first);
         S1.second = add(mul(S1.second, power2[S2_size]), S2.second);
         return S1;
