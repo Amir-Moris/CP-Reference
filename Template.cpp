@@ -16,6 +16,7 @@ const long double PI = acos(-1);
 const int N = 1e5 + 5, MOD = 1e9 + 7;
 
 int rand(int l, int r) {
+    // to get any random number use rng()
     return uniform_int_distribution<int>(l, r)(rng);
 }
 
