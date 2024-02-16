@@ -8,7 +8,7 @@ struct Trie {
                 ptr[i] = NULL;
             }
         }
-    } *root;
+    } *root = new Node();
 
     Trie() {}
 
